@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 import CenteredContainer from "@/app/components/CenteredContainer";
 
 const skills = [
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <CenteredContainer className="grid place-items-center">
-        <div className="max-w-[365px] flex flex-col p-6 rounded-lg border border-gray-03 font-poppins">
+        <div className="max-w-[365px] flex flex-col p-6 rounded-lg border border-gray-05 dark:border-gray-02 font-poppins">
           <img
             src="/mentor-fulano.png"
             alt="Foto do fulano"
@@ -30,7 +31,7 @@ export default function Home() {
           </span>
           <div className="flex flex-wrap gap-2 mb-8">
             {skills.map(s => (
-              <div className="grid place-items-center text-xs px-4 h-6 rounded-full bg-secondary-02 text-neutral-02">
+              <div className="grid place-items-center text-xs px-4 h-6 rounded-full bg-secondary-02 text-neutral-02 dark:bg-gray-01 dark:text-secondary-01">
                 {s}
               </div>
             ))}
@@ -40,7 +41,12 @@ export default function Home() {
             qui esse pariatur duis deserunt mollit dolore cillum id quis ad qu
             minim...
           </p>
-          <button className="h-12 bg-primary-03 hover:bg-primary-02 rounded-lg font-semibold text-neutral-01">
+          <button
+            className={twMerge(
+              "h-12 bg-primary-03 hover:bg-primary-02 rounded-lg font-semibold text-neutral-01",
+              "dark:text-secondary-05"
+            )}
+          >
             Ver perfil
           </button>
         </div>
